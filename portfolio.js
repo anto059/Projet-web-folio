@@ -7,37 +7,42 @@ document.addEventListener('DOMContentLoaded', function () {
     a.href = href;
     a.setAttribute('aria-label', label);
     a.style.textDecoration = 'none';
-    a.style.display = 'inline-block';
+    a.style.display = 'inline-flex';
+    a.style.alignItems = 'center';
     a.style.margin = '12px 20px';
 
     // Create block container
     var block = document.createElement('div');
     block.className = 'portfolio-block';
     block.style.display = 'inline-flex';
-    block.style.flexDirection = 'column';
+    block.style.flexDirection = 'row';
     block.style.alignItems = 'center';
-    block.style.justifyContent = 'center';
-    block.style.width = '200px';
-    block.style.height = '160px';
-    block.style.border = '3px solid #FF69B4';
-    block.style.borderRadius = '8px';
-    block.style.padding = '12px';
+    block.style.justifyContent = 'flex-start';
+    block.style.minWidth = '300px';
+    block.style.height = 'auto';
+    block.style.border = '2px solid rgba(255, 255, 255, 0.25)';
+    block.style.borderRadius = '16px';
+    block.style.padding = '18px 20px';
     block.style.boxSizing = 'border-box';
-    block.style.background = 'linear-gradient(135deg, #FFB6D9 0%, #FFDDC1 100%)';
-    block.style.color = '#6A4C93';
+    block.style.background = '#132a5e';
+    block.style.color = '#ffffff';
     block.style.cursor = 'pointer';
-    block.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+    block.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease';
+    block.style.boxShadow = '0 18px 34px rgba(0, 0, 0, 0.35)';
 
     // Icon: circular image
     var icon = document.createElement('div');
     icon.className = 'portfolio-icon';
-    icon.style.width = '72px';
-    icon.style.height = '72px';
+    icon.style.width = '60px';
+    icon.style.height = '60px';
     icon.style.borderRadius = '50%';
     icon.style.overflow = 'hidden';
     icon.style.display = 'flex';
     icon.style.alignItems = 'center';
     icon.style.justifyContent = 'center';
+    icon.style.background = 'rgba(255, 255, 255, 0.08)';
+    icon.style.border = '1px solid rgba(255, 255, 255, 0.15)';
+    icon.style.marginRight = '16px';
     // Use an emoji
     var emojiDiv = document.createElement('div');
     emojiDiv.textContent = emoji;
@@ -52,12 +57,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Label
     var labelDiv = document.createElement('div');
     labelDiv.className = 'portfolio-label';
-    labelDiv.style.marginTop = '8px';
-    labelDiv.style.fontSize = '16px';
-    labelDiv.style.textAlign = 'center';
-    labelDiv.style.fontWeight = 'bold';
-    labelDiv.style.color = '#6A4C93';
+    labelDiv.style.marginTop = '0';
+    labelDiv.style.fontSize = '17px';
+    labelDiv.style.textAlign = 'left';
+    labelDiv.style.fontWeight = '700';
+    labelDiv.style.color = '#ffffff';
     labelDiv.style.fontFamily = "'Georgia', serif";
+    labelDiv.style.letterSpacing = '0.02em';
+    labelDiv.style.whiteSpace = 'nowrap';
     labelDiv.textContent = label;
 
     block.appendChild(icon);
