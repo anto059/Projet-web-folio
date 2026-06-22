@@ -18,13 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
   block.style.justifyContent = 'center';
   block.style.width = '200px';
   block.style.height = '160px';
-  block.style.border = '2px solid #333';
+  block.style.border = '3px solid #FF69B4';
   block.style.borderRadius = '8px';
   block.style.padding = '12px';
   block.style.boxSizing = 'border-box';
-  block.style.background = '#fff';
-  block.style.color = '#111';
+  block.style.background = 'linear-gradient(135deg, #FFB6D9 0%, #FFDDC1 100%)';
+  block.style.color = '#6A4C93';
   block.style.cursor = 'pointer';
+  block.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+  block.style.marginTop = '40px';
 
   // Icon: circular image of graduation cap
   var icon = document.createElement('div');
@@ -53,6 +55,9 @@ document.addEventListener('DOMContentLoaded', function () {
   label.style.marginTop = '8px';
   label.style.fontSize = '16px';
   label.style.textAlign = 'center';
+  label.style.fontWeight = 'bold';
+  label.style.color = '#6A4C93';
+  label.style.fontFamily = "'Georgia', serif";
   label.textContent = 'Portfolio de Anthony';
 
   block.appendChild(icon);
@@ -64,20 +69,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Wrap anchor in a <center> so the block appears centered below the title
   var centerWrap = document.createElement('center');
   centerWrap.appendChild(a);
-  // Prefer to place the block below a subtitle if present.
-  // Look for common subtitle selectors (id="subtitle", class="subtitle" or first h2 inside container)
-  var subtitle = container.querySelector('#subtitle, .subtitle') || container.querySelector('h2');
-  if (subtitle) {
-    subtitle.parentNode.insertBefore(centerWrap, subtitle.nextSibling);
-  } else {
-    // Try to place the new block below the first existing link to anthony.html
-    var firstAnthonyLink = container.querySelector("a[href='anthony.html']");
-    if (firstAnthonyLink) {
-      firstAnthonyLink.parentNode.insertBefore(centerWrap, firstAnthonyLink.nextSibling);
-    } else {
-      container.appendChild(centerWrap);
-    }
-  }
+  // Insert directly into the portfolio-container
+  container.appendChild(centerWrap);
 });
 
 // Optional: small helper to allow styling from CSS by class names
