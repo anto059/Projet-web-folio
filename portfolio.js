@@ -70,6 +70,15 @@ document.addEventListener('DOMContentLoaded', function () {
     block.appendChild(icon);
     block.appendChild(labelDiv);
     a.appendChild(block);
+    
+    // Add click animation
+    a.addEventListener('click', function(event) {
+      event.preventDefault();
+      document.body.classList.add('fade-out');
+      setTimeout(function() {
+        window.location.href = href;
+      }, 800);
+    });
 
     return a;
   }
