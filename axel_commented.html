@@ -1,0 +1,201 @@
+<!-- Déclare le type de document comme HTML5 -->
+<!DOCTYPE html>
+<!-- Ouvre la balise racine HTML et définit la langue sur le français -->
+<html lang="fr">
+<head>
+  <!-- Encodage et viewport -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Titre de la page -->
+  <title>Mon Portfolio - De Connick</title>
+  <!-- Feuille de style externe -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Bibliothèque de confettis -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <!-- Styles internes -->
+  <style>
+    /* Corps : marge, dégradé et police */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #FF0000 0%, #E63946 50%, #FF1744 100%);
+      color: #f8fafc;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    header {
+      padding: 40px 20px 10px;
+      text-align: center;
+    }
+    header h1 {
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 2.6rem;
+      letter-spacing: 0.02em;
+      margin: 0;
+    }
+    main {
+      padding: 0 20px 40px;
+    }
+    section {
+      max-width: 820px;
+      margin: 0 auto 28px;
+      padding: 18px 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+      backdrop-filter: blur(10px);
+    }
+    h2 {
+      color: #eef2ff;
+      margin-top: 0;
+      font-size: 1.7rem;
+    }
+    p {
+      color: #e2e8f0;
+      line-height: 1.75;
+      margin: 0.75rem 0 0;
+    }
+    #like-zone {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 18px;
+      background: rgba(255, 255, 255, 0.12);
+      padding: 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    #mon-bouton-like,
+    #compteur-like,
+    .home-button {
+      border: none;
+      border-radius: 999px;
+      padding: 12px 22px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    #mon-bouton-like {
+      background: #FF0000;
+      color: #f8fafc;
+      box-shadow: 0 12px 24px rgba(255, 0, 0, 0.4);
+    }
+    #mon-bouton-like:hover {
+      background: #FF1744;
+      transform: translateY(-2px);
+    }
+    #compteur-like {
+      background: rgba(255, 255, 255, 0.2);
+      color: #f8fafc;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      min-width: 54px;
+    }
+    .home-button {
+      display: inline-block;
+      text-decoration: none;
+      color: #f8fafc;
+      background: #FF0000;
+      box-shadow: 0 12px 24px rgba(255, 0, 0, 0.4);
+    }
+    .home-button:hover {
+      background: #FF1744;
+      transform: translateY(-1px);
+    }
+    footer {
+      max-width: 820px;
+      margin: 0 auto 24px;
+      padding: 10px 20px;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+    }
+    footer p {
+      margin: 0.45rem 0;
+    }
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .skill-tag {
+      background: rgba(255, 255, 255, 0.12);
+      color: #eff6ff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      padding: 10px 16px;
+      min-width: 100px;
+      text-align: center;
+      font-weight: 600;
+    }
+    center {
+      display: block;
+      text-align: center;
+    }
+    body {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    body.fade-out {
+      animation: fadeOut 0.6s ease-out forwards;
+    }
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+      <h1><center> Portfolio de Axel !</center></h1>
+    </header>
+
+  <main>
+    <!-- Zone de présentation avec like -->
+    <center>
+      <div id="like-zone">
+        <button id="mon-bouton-like" type="button">like</button>
+        <button id="compteur-like" type="button" disabled>0</button>
+      </div>
+    </center>
+    <section>
+      <center><h2>À propos de moi</center></h2>
+      <center><p>Je m'appelle Axel De Connick, je suis en seconde au Lycée La Croix Blanche à Bondues et j'ai effectué mon stage de découverte à EPITECH.</center></p>
+    </section>
+    <section>
+      <center><h2>Mes passions</center></h2>
+      <center><p>Je suis passionné par le sport, les jeux vidéo, la musique et les sciences.</center></p>
+      <div class="skills-container">
+        <div class="skill-tag"><center> Jeux Vidéo</center></div>
+        <div class="skill-tag"><center> Sport</center></div>
+        <div class="skill-tag"><center> Musique</center></div>
+      </div>
+    </section>
+    <section>
+      <center><h2>Mes projets</center></h2>
+      <center><p>Au cours de ces deux semaines de stage, nous avons participé à de nombreuses activités enrichissantes et variées. Nous avons découvert le monde de la cybersécurité grâce à l’atelier « Vis ma vie d’enquêteur OSINT », mêlant GeoGuessr et CTF, puis assisté à plusieurs conférences sur les métiers de l’informatique, l’intelligence artificielle et l’apprentissage automatique. Nous avons également exploré l’algorithmie avec le projet « Poké Poireau », qui consistait à programmer un personnage capable d’affronter d’autres joueurs. Par la suite, nous avons dû créer un morpion IA capable de gagner à chaque partie, puis, le lendemain, développer le célèbre jeu Snake en JavaScript. Nous avons aussi participé à des activités plus créatives et techniques, comme la construction d’un canard en Lego et une initiation à l’électronique et à la programmation avec Arduino. Enfin, nous avons réalisé notre portfolio web afin de présenter notre parcours, nos compétences et l’ensemble des projets réalisés durant ce stage. Cette expérience nous a permis de développer nos connaissances en informatique tout en découvrant différents domaines du numérique de manière ludique et concrète</center></p>
+    </section>
+  </main>
+
+  <footer>
+   <div align="left"><p>© 2026 - Axel De Connick | Fait avec passion</p></div>
+   <div align="left"><a class="home-button" href="index.html">Page d'accueil</a></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

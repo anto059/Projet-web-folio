@@ -1,0 +1,118 @@
+<!-- DOCTYPE et langue -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Encodage et viewport pour s'adapter aux mobiles -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Titre et lien CSS -->
+  <title>Mon Portfolio - Szajwaj</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Styles internes pour la page d'accueil -->
+  <style>
+    /* Couleurs et police de base */
+    body {
+      background-color: #0b1940;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    /* Style du titre principal */
+    header h1 {
+      color: #ffffff;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      font-size: 48px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin: 20px 0;
+    }
+    /* Conteneurs de contenu */
+    .content-section {
+      background-color: #132a5e;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .content-section h2 {
+      color: #ffffff;
+      font-family: 'Trebuchet MS', sans-serif;
+      font-size: 28px;
+      margin-top: 0;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #7fa7ff;
+      padding-bottom: 10px;
+    }
+    .content-section p {
+      color: #ffffff;
+      font-family: 'Verdana', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+    }
+    /* Bloc spécial pour les liens vers les portfolios */
+    .portfolio-block {
+      background: linear-gradient(135deg, #FFB6D9 0%, #FFDDC1 100%);
+      border: 3px solid #FF69B4;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .portfolio-block:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(255, 107, 180, 0.4);
+    }
+    .portfolio-label {
+      color: #ffffff !important;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+    }
+    /* Animation d'apparition */
+    body {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    body.fade-out {
+      animation: fadeOut 0.8s ease-in-out forwards;
+    }
+    @keyframes fadeOut {
+      from { opacity: 1; }
+      to { opacity: 0; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- En-tête avec titre -->
+  <header>
+    <h1><center>Projet site web</center></h1>
+  </header>
+
+  <!-- Section Présentation -->
+  <div class="content-section">
+    <h2>Présentation</h2>
+    <p>Nous avons créé un site web pour présenter notre stage et nous-mêmes. On y retrouve des informations sur les différentes activités que nous avons effectuées, mais aussi quelques informations sur nous-mêmes.
+    </p>
+  </div>
+
+  <!-- Section Objectif -->
+  <div class="content-section">
+    <h2>Objectif</h2>
+    <p>Notre objectif était de créer un site web pour présenter comment nous avons vécu notre stage au cours de ces deux semaines. Ce site permet de donner notre avis personnel afin de montrer, et même de faire comprendre, que ce stage nous a été bénéfique.</p>
+  </div>
+
+  <!-- Section Détails -->
+  <div class="content-section">
+    <h2>Détails</h2>
+    <p>Nous avons créé deux fichiers HTML que nous avons nommés anthony.html et axel.html. Ces deux fichiers permettent d'accéder à notre portfolio, qui raconte les différentes activités effectuées au cours du stage et donne quelques informations sur nous. Nous avons également créé un fichier index.html qui sert de page d'accueil. On y retrouve plusieurs sections présentant le projet et nos objectifs. Nous avons aussi réalisé des dégradés de couleurs pour rendre la page plus esthétique, ainsi que des blocs de texte pour rendre chaque information plus claire. Enfin, nous avons intégré des blocs qui permettent de se diriger vers notre portfolio, ainsi qu'un bouton dans le portfolio pour revenir à la page d'accueil. </p>
+  </div>
+
+  <!-- Conteneur vide où portfolio.js va injecter des blocs cliquables -->
+  <div id="portfolio-container"></div>
+
+  <!-- Script qui crée dynamiquement les liens vers les portfolios -->
+  <script src="portfolio.js"></script>
+</body>
+</html>
